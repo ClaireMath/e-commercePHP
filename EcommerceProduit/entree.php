@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <!-- -------------------------------------------><!-- -------------------------------->
+
     <nav>
 
 <ul>
@@ -20,7 +20,7 @@
             </ul>	
         </li>
 
-        <li class=""><a href="#sport ">Plats </a>
+        <li class=""><a href="plat.php" >Plats </a>
 
             <ul class="sous"> 
                 
@@ -44,11 +44,7 @@
 
 </ul>
 </nav>
-
-
-<!-- ------------------------------------------->
-
-
+--> 
 
 
 <div class="image1">
@@ -59,14 +55,17 @@
 </div>
 
 <div class="image2">
-    <img class="imgentree1"  src=entree2.jpg 
+    <img class="imgentree2"  src=entree2.jpg 
         width="22%"
         height="20%"
     >
 </div>
 
 
-
+<!--
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
+-->  
