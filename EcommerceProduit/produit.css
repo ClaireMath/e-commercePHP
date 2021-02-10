@@ -15,3 +15,37 @@
     margin-right: 6% ;
     margin-left: 6% ;
 }
+
+p {
+color: white;
+}
+
+.titre{
+    font-size: 25px ;
+    font-family: URW Chancery L, cursive;
+    margin-left: 2%;
+    margin-top: 3px;
+
+}
+
+.description{
+    font-family: Snell Roundhand, cursive ;
+    font-size: 25px ;
+    margin-top: 4%;
+    margin-left: 2%;
+
+}
+
+.prix {
+    font-size: 25px ;
+    margin-top: 8%;
+    margin-left: 9%;
+    font-family: URW Chancery L, cursive;
+}
+
+hr {
+
+    background-color: yellow;
+    height: 20px;
+    
+}
