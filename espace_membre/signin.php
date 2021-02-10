@@ -2,7 +2,9 @@
 
 session_start();
 
-$db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
+// $db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
+// $db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', '');
+$db = new PDO('mysql:host=127.0.0.1;port=3307;dbname=groupe8', 'root', '');
 
 if(isset($_POST['formconnexion'])){
     $mailconnect = htmlspecialchars($_POST['mailconnect']);
