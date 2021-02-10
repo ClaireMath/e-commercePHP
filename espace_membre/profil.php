@@ -1,11 +1,11 @@
 <?php
     session_start();
 
-    $bdd = new PDO('mysql:host=127.0.0.1;port=8889;dbname=testBdd', 'root', 'root');
+    $db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
 
     if(isset($_GET['id']) && $_GET['id'] > 0){
         $getid = intval($_GET['id']);
-        $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
+        $requser = $db->prepare("SELECT * FROM membres WHERE numMembre = ?");
         $requser->execute(array($getid));
         $userinfo = $requser->fetch();
     

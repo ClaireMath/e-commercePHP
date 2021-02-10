@@ -2,18 +2,18 @@
 
 session_start();
 
-$bdd = new PDO('mysql:host=127.0.0.1;port=8889;dbname=testBdd', 'root', 'root');
+$db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
 
 if(isset($_POST['formconnexion'])){
     $mailconnect = htmlspecialchars($_POST['mailconnect']);
     $passconnect = sha1($_POST['passwordconnect']);
     if(!empty($mailconnect) && !empty($passconnect)){
-        $requser = $bdd->prepare("SELECT * FROM membres WHERE email = ? AND password = ?");
+        $requser = $db->prepare("SELECT * FROM membres WHERE email = ? AND mdp = ?");
         $requser->execute(array($mailconnect, $passconnect));
         $userexist = $requser->rowCount();
         if($userexist == 1){
             $userinfo = $requser->fetch();
-            $_SESSION['id'] = $userinfo['id'];
+            $_SESSION['id'] = $userinfo['numMembre'];
             $_SESSION['name'] = $userinfo['nom'];
             $_SESSION['fisrtname'] = $userinfo['prenom'];
             $_SESSION['mail'] = $userinfo['email'];
