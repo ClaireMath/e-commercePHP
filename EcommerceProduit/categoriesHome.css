@@ -1,0 +1,88 @@
+
+        /*menu déroulant*/
+
+        nav {
+            width: 100%;        /* alligner a gauche */ 
+            margin: auto ; 
+            background-image: url('fondMenu.jpg') ;              /* fond menu*/
+            position: relative;
+            top: 0px;                      /* marge en dessous du titre*/
+                                       
+            }
+                                       
+        nav ul { 
+                list-style-type: none;  /* enlever chaque point devant lecriture pour les "ul" en html liste */
+                }
+        
+        nav ul li {
+            float: left; /* faire flotter les categories a gauche à la suites */
+            width: 55%; /* séparer les "li" (marques) en pourcentages */
+            text-align: center; /*alligner au centres les lignes */  
+                }
+        
+        nav ul::after {
+            content: "";
+            display: table;
+            clear: both; 
+                    }
+                    
+        nav a {
+            display: block;          
+            text-decoration: none;      /*enlevr le surlignage */
+            color: white ;              /* couleurs du textes */
+            font-size: 28px  ;
+            font-weight: bold;
+            border-bottom: 32px solid transparent ;
+            padding: 25px 110px ;          /* si probleme mettre 0 a la place du 110 */                         
+                }
+                                       
+        nav a:hover {
+            color: white;         /* change la couleur du textes au survol ----------------------------------------------------*/ 
+            font-weight: bold;          /*met en gras au survol */ 
+            font-size: 30px ;   /* augmente la taille au survol */ 
+            border-bottom: 2px double rgb(146, 197, 146) ;        /* barre du dessous double et couleur ------------------------------------- */ 
+                    }
+        
+        .sous {
+            display: none;       /*fait disparraitre les sous */ 
+            box-shadow: 0px 1px 2px #CCC ; 
+            background-color: transparent ; 
+            
+                }
+        
+        nav > ul li:hover .sous {
+            display: block;            /*remet les sous quand on passe le curseur sur ce qu'on veut */ 
+                                }
+        
+        .sous li{
+            float: none;
+            width: 100%;     /*centre les sous quand ils sont défilé */ 
+            text-align:  left; /* sous a gauche */ 
+                } 
+        
+        .sous a { 
+            padding: 5px; /*espace les sous dans le defilement */ 
+            border-bottom: none; 
+            font-size: 20px ;  /* changer la taille des sous menu */
+                }
+        
+        .sous a:hover { 
+            border-bottom: none;  /*enleve la barre des sous au survole */ 
+            background-color: transparent;   /*fond des cases de sous */ 
+                        } 
+        
+        .sous {
+            display: none;
+            box-shadow: 0px 0px 0px rgb(146, 197, 146);
+            background-color: transparent ; /*fond de tout les sous */ 
+            position: relative;       
+            width: 100%; 
+                }
+        
+        nav ul li {                               
+            float: left;
+            width: 25%;     /*decaler les collonne de 20% entre eux */ 
+            text-align: center;      /*aligner le texte au centre */ 
+            position: relative;     
+                    }
+        
