@@ -20,6 +20,7 @@ if(isset($_POST['formconnexion'])){
             $_SESSION['name'] = $userinfo['nom'];
             $_SESSION['fisrtname'] = $userinfo['prenom'];
             $_SESSION['mail'] = $userinfo['email'];
+            $_SESSION['role'] = $userinfo['role'];
             header("Location: profil.php?id=" . $_SESSION['id']);
         } else {
             $erreur = "Email ou mot de passe incorrect !";
