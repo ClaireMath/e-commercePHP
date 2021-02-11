@@ -30,6 +30,22 @@
         <br>
         Mail = <?php echo $userinfo['email'] ?>
         <br>
+        Role = <?php
+        
+        switch($userinfo['role']){
+            case 0:
+                echo "Visiteur";
+                break;
+            case 1:
+                echo "Membre";
+                break;
+            case 2:
+                echo "Administrateur (<a href=\"../admin/panel_admin.php\"> Panel Admin </a>)";
+                break;
+            default:
+                echo "Visiteur";
+        }?>
+        <br>
         <?php
             if(isset($_SESSION['id']) && $userinfo['numMembre'] == $_SESSION['id']){
         ?>
