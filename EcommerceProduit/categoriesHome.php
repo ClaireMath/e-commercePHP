@@ -45,7 +45,8 @@
 	if (isset($_GET["categ"])){
 	switch($_GET["categ"]){
 		case "entree":
-			include("entree.php");
+			require("entree.php");
+			break;
 	}
 	}
 ?>

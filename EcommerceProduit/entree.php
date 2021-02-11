@@ -1,25 +1,23 @@
-<div class="image1">
-    <img class="imgentree1"  src=entree1.jpg 
-        width="22%"
-        height="22%"
-    >
-    <p class="titre">Le toast César</p>
-        <hr>
-    <p class="description">Toast César aux fromage  </p>
-        <hr>
-    <p class="prix">14€ </p> 
-</div>
+<?php
 
-<div class="image2">
-    <img class="imgentree2"  src=entree2.jpg 
-        width="22%"
-        height="20%"
-    >
-    <p class="titre">Le saumon croustille </p>
-        <hr>
-    <p class="description">Saumon fumée entre deux feuille avec sa sauce maison</p>
-        <hr>
-    <p class="prix">17€ </p> 
-</div>
+    
+    $bd = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
+    // echo "test";
+    $stats = $bd->query('SELECT * FROM articles WHERE categorie = "entree"');
+    while($article = $stats->fetch()){
+        
+        echo '<div class="image1 produit">';
+        echo '<img class="imgentree1"  src=' . $article['image'] . ' width="22%" height="22%">';
+        echo '<p class="titre" style="color:white">' . $article['nomArticle'] . '</p>';
+        echo '<hr>';
+        echo '<p class="description" style="color:white">' . $article['description'] . '</p>';
+        echo '<hr>';
+        echo '<p class="prix" style="color:white">' . $article['prix'] . '€</p> ';
+        echo '</div>';
+    }
+
+
+
+?>
 
 

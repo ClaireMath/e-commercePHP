@@ -1,27 +1,23 @@
+<?php
 
-<div class="image1">
-    <img class="dessert1"  src=dessert1.jpg 
-        width="22%"
-        height="22%"
-    >
-    <p class="titre">Millefeuille de fraise à la chantilly</p>
-        <hr>
-    <p class="description">Millefeuille à la chantilly avec sous coulis de fraise </p>
-        <hr>
-    <p class="prix">13€ </p> 
+    
+    $bd = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
+    // echo "test";
+    $stats = $bd->query('SELECT * FROM articles WHERE categorie = "dessert"');
+    while($article = $stats->fetch()){
+        
+        echo '<div class="image1 produit">';
+        echo '<img class="imgentree1"  src=' . $article['image'] . ' width="22%" height="22%">';
+        echo '<p class="titre" style="color:white">' . $article['nomArticle'] . '</p>';
+        echo '<hr>';
+        echo '<p class="description" style="color:white">' . $article['description'] . '</p>';
+        echo '<hr>';
+        echo '<p class="prix" style="color:white">' . $article['prix'] . '€</p> ';
+        echo '</div>';
+    }
 
-</div>
 
-<div class="image2">
-    <img class="dessert2"  src=dessert2.jpg 
-        width="22%"
-        height="20%"
-    >
-    <p class="titre">Paradis du chocolat </p>
-        <hr>
-    <p class="description">brownie aux chocolat accompagnée de sa boule de glace  </p>
-        <hr>
-    <p class="prix">22€ </p> 
 
-</div>
+?>
+
 

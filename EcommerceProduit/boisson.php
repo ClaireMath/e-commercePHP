@@ -1,27 +1,23 @@
+<?php
 
-<div class="image1">
-    <img class="boisson1"  src=boisson1.jpg 
-        width="22%"
-        height="22%"
-    >
-    <p class="titre">COCKTAIL MAISON</p>
-        <hr>
-    <p class="description">Cocktail à base de menthe et citron  </p>
-        <hr>
-    <p class="prix">10€ </p> 
     
+    $bd = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
+    // echo "test";
+    $stats = $bd->query('SELECT * FROM articles WHERE categorie = "boisson"');
+    while($article = $stats->fetch()){
+        
+        echo '<div class="image1 produit">';
+        echo '<img class="imgentree1"  src=' . $article['image'] . ' width="22%" height="22%">';
+        echo '<p class="titre" style="color:white">' . $article['nomArticle'] . '</p>';
+        echo '<hr>';
+        echo '<p class="description" style="color:white">' . $article['description'] . '</p>';
+        echo '<hr>';
+        echo '<p class="prix" style="color:white">' . $article['prix'] . '€</p> ';
+        echo '</div>';
+    }
 
-</div>
 
-<div class="image2">
-    <img class="boisson2"  src=boisson2.jpg 
-        width="22%"
-        height="20%"
-    >
-    <p class="titre">BOISSONS CHAUDES</p>
-        <hr>
-    <p class="description">Boissons chaudes proposée : Thé, Café  </p>
-        <hr>
-    <p class="prix">8€ </p>  
-</div>
+
+?>
+
 
