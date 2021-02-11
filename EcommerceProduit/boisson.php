@@ -4,11 +4,12 @@
         width="22%"
         height="22%"
     >
-    <p class="titre">COCKTAIL MAISON:</p>
+    <p class="titre">COCKTAIL MAISON</p>
         <hr>
-    <p class="description">Cocktail à base de menthe et cirton . </p>
+    <p class="description">Cocktail à base de menthe et citron  </p>
         <hr>
     <p class="prix">10€ </p> 
+    
 
 </div>
 
@@ -17,9 +18,9 @@
         width="22%"
         height="20%"
     >
-    <p class="titre">BOISSONS CHAUDES:</p>
+    <p class="titre">BOISSONS CHAUDES</p>
         <hr>
-    <p class="description">Boissons chaudes proposée : Thé, Café . </p>
+    <p class="description">Boissons chaudes proposée : Thé, Café  </p>
         <hr>
     <p class="prix">8€ </p>  
 </div>
