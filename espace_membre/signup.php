@@ -27,7 +27,7 @@
                             $erreur = "Vos mots de passes ne correspondent pas !";
                         }
                     } else {
-                        $erreur = "Un compte est déjà associé à cet adresse mail !";
+                        $erreur = "Un compte est déjà associé à cet adresse mail ! <a href=\"signin.php\">Me connecter</a>";
                     }
                 } else {
                     $erreur = "Votre adresse mail n'est pas valide !";

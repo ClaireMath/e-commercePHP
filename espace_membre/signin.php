@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+if(isset($_SESSION['id'])){
+    header('Location: profil.php');
+}
 
 $db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
 

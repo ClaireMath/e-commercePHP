@@ -3,8 +3,8 @@
 
     $db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
 
-    if(isset($_GET['id']) && $_GET['id'] > 0){
-        $getid = intval($_GET['id']);
+    if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
+        $getid = intval($_SESSION['id']);
         $requser = $db->prepare("SELECT * FROM membres WHERE numMembre = ?");
         $requser->execute(array($getid));
         $userinfo = $requser->fetch();
@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
 </head>
-<body>
+<body style="font-family:'Lato', sans-serif">
 
     <div align="center">
         <h3>Profil de <?php echo $userinfo['prenom']; ?></h3>
@@ -31,9 +31,9 @@
         Mail = <?php echo $userinfo['email'] ?>
         <br>
         <?php
-            if(isset($_SESSION['id']) && $userinfo['id'] == $_SESSION['id']){
+            if(isset($_SESSION['id']) && $userinfo['numMembre'] == $_SESSION['id']){
         ?>
-        <a href="#">Editer mon profil</a>
+        <a href="delete_profil.php">Supprimer mon compte</a>
         <br>
         <a href="logout.php">Se déconnecter</a>
         <?php
