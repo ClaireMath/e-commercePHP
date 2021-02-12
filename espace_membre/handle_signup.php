@@ -14,14 +14,14 @@
                 
     
                 if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
-                    $reqmail = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
+                    $reqmail = $bd->prepare("SELECT * FROM membres WHERE mail = ?");
                     $reqmail->execute(array($mail));
                     $mailexist = $reqmail->rowCount();
                     if($mailexist == 0){
                         if($password == $passwordc){
-                            $insertmbr = $bdd->prepare("INSERT INTO membres(nom, prenom, email, password) VALUES (?, ?, ?, ?)");
+                            $insertmbr = $bd->prepare("INSERT INTO membres(nom, prenom, email, password) VALUES (?, ?, ?, ?)");
                             $insertmbr->execute(array($firstname, $name, $mail, $password));
-                            echo "$firstname | $name | $mail | $password";
+                            
                             // header('Location: signup.php?success=true');
                             $erreur = "Votre compte a bien été créé ! <a href=\"signin.php\">Me connecter</a>";
                         } else {

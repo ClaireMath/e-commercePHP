@@ -1,6 +1,6 @@
 <?php
 
-    $db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
+    require('../init.php');
 
    if(isset($_POST['forminscription'])){
     $firstname = htmlspecialchars($_POST['firstname']);
@@ -15,12 +15,12 @@
             
 
                 if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
-                    $reqmail = $db->prepare("SELECT * FROM membres WHERE email = ?");
+                    $reqmail = $bd->prepare("SELECT * FROM membres WHERE email = ?");
                     $reqmail->execute(array($mail));
                     $mailexist = $reqmail->rowCount();
                     if($mailexist == 0){
                         if($password == $passwordc){
-                            $insertmbr = $db->prepare("INSERT INTO membres(nom, prenom, email, role, mdp) VALUES (?, ?, ?, 1, ?)");
+                            $insertmbr = $bd->prepare("INSERT INTO membres(nom, prenom, email, role, mdp) VALUES (?, ?, ?, 1, ?)");
                             $insertmbr->execute(array($name, $firstname, $mail, $password));
                             $erreur = "Votre compte a bien été créé ! <a href=\"signin.php\">Me connecter</a>";
                         } else {

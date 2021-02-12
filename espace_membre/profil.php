@@ -1,11 +1,11 @@
 <?php
     session_start();
 
-    $db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
+    require('../init.php');
 
     if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
         $getid = intval($_SESSION['id']);
-        $requser = $db->prepare("SELECT * FROM membres WHERE numMembre = ?");
+        $requser = $bd->prepare("SELECT * FROM membres WHERE numMembre = ?");
         $requser->execute(array($getid));
         $userinfo = $requser->fetch();
     
@@ -40,7 +40,7 @@
                 echo "Membre";
                 break;
             case 2:
-                echo "Administrateur (<a href=\"../admin/panel_admin.php\"> Panel Admin </a>)";
+                echo "Administrateur (<a href=\"../admin/admin_panel.php\"> Panel Admin </a>)";
                 break;
             default:
                 echo "Visiteur";

@@ -5,13 +5,13 @@ if(isset($_SESSION['id'])){
     header('Location: profil.php');
 }
 
-$db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
+require('../init.php');
 
 if(isset($_POST['formconnexion'])){
     $mailconnect = htmlspecialchars($_POST['mailconnect']);
     $passconnect = sha1($_POST['passwordconnect']);
     if(!empty($mailconnect) && !empty($passconnect)){
-        $requser = $db->prepare("SELECT * FROM membres WHERE email = ? AND mdp = ?");
+        $requser = $bd->prepare("SELECT * FROM membres WHERE email = ? AND mdp = ?");
         $requser->execute(array($mailconnect, $passconnect));
         $userexist = $requser->rowCount();
         if($userexist == 1){
