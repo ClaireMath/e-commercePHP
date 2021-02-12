@@ -1,7 +1,7 @@
 <?php
 
     
-    $bd = new PDO('mysql:host=127.0.0.1;port=8889;dbname=groupe8', 'root', 'root');
+    $bd = new PDO('mysql:host=127.0.0.1;port=3306;dbname=groupe8', 'root', 'root');
     // echo "test";
     $stats = $bd->query('SELECT * FROM articles WHERE categorie = "boisson"');
     while($article = $stats->fetch()){
