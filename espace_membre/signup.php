@@ -1,6 +1,9 @@
 <?php
-
+    session_start();
     require('../init.php');
+    if(isset($_SESSION['id'])){
+        header('Location: profil.php');
+    }
 
    if(isset($_POST['forminscription'])){
     $firstname = htmlspecialchars($_POST['firstname']);

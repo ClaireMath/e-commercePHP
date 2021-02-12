@@ -1,5 +1,5 @@
 <?php
-    require('../init.php');
+    // require('../init.php');
 
     function delete_prod($id){
         global $bd;

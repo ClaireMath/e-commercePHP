@@ -1,3 +1,7 @@
+<h1 align="center">
+    Liste Produits
+</h1><br>
+
 <?php
     session_start();
     
@@ -13,8 +17,8 @@
                 break;
         }
     }
-    require('../utils/articles_managing.php');
-    print_r($_POST);
+    // require('../utils/articles_managing.php');
+    // print_r($_POST);
     if(empty($_POST['addImage'])){
         $_POST['addImage'] = "/";
     }
@@ -44,7 +48,7 @@
             $prix = $_POST['modifPrix'];
             $id = $_POST['numArticle'];
             intval($id);
-            intval($prix);
+            floatval($prix);
 
             $modreq = $bd->prepare('UPDATE articles SET nomArticle = ?, description = ?, categorie = ?, image = ?, prix = ? WHERE numArticle = ?');
             $modreq->execute(array($name, $desc, $categ, $img, $prix, $id));
@@ -60,7 +64,7 @@
             $prix = $_POST['modifPrix'];
             $id = $_POST['numArticle'];
             intval($id);
-            intval($prix);
+            floatval($prix);
 
             delete_prod($id);
     }

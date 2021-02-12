@@ -21,15 +21,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <ul>
-            <li><a href="users.php">Users Managing</a></li>
-            <li><a href="manage_product.php">Products Managing</a></li>
-            <li><a href="manage_categ.php">Categories Managing</a></li>
+    <h1 align="center">Panel Administration</h1>
+    <br>
+    <br>
+    <div align="center">
+        <ul class="btn-group">
+            <a href="users.php" class="btn btn-primary">Users Managing</a>
+            <a href="manage_product.php" class="btn btn-primary">Products Managing</a>
+            <a href="manage_categ.php" class="btn btn-primary">Categories Managing</a>
         </ul>
-    </header>
-    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
